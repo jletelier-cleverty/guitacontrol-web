@@ -882,7 +882,7 @@
       /* Hero mock dashboard */
       .hero-mock-kpis { grid-template-columns: repeat(3, 1fr) !important; gap: 8px !important; }
       .hero-mock-kpis .mock-kpi-value { font-size: 1.1rem !important; }
-      .hero-mock-charts { display: none !important; }
+      .hero-mock-charts { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
 
       /* Patrimonio showcase */
       .patrimonio-grid-resp { grid-template-columns: 1fr !important; }
@@ -941,7 +941,14 @@
       .hero-mock-kpis .mock-kpi { padding: 10px !important; }
       .hero-mock-kpis .mock-kpi-value { font-size: 0.92rem !important; }
       .hero-mock-kpis .mock-kpi-label { font-size: 0.6rem !important; }
-      .hero-mock-charts { display: none !important; }
+      .hero-mock-charts { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+      .hero-mock-charts .mock-kpi { padding: 14px !important; }
+      .hero-mock-charts svg[viewBox="0 0 200 200"] {
+        width: 140px !important; height: 140px !important;
+      }
+      .hero-mock-charts div[style*="height:130px"] {
+        height: 100px !important;
+      }
       .browser-bar { padding: 8px 10px; }
       .browser-dot { width: 8px; height: 8px; }
       .browser-url { font-size: 0.65rem; padding: 4px 8px; }
@@ -1203,7 +1210,7 @@
       <span>NUEVO</span>
       Ahora con recomendaciones inteligentes
     </div>
-    <h1>Deja de preguntarte<br><em>a donde se fue tu plata</em></h1>
+    <h1>Deja de preguntarte <br><em>a donde se fue tu plata</em></h1>
     <p>Importa las cartolas de tu banco y tarjetas de credito, deja que GuitaControl categorice todo automatico, y por fin entiende en que gastas. Simple. Sin planillas. Sin vueltas.</p>
     <div class="hero-actions">
       <a href="https://app.guitacontrol.com/login.html" class="btn btn-primary btn-accent">
