@@ -884,17 +884,6 @@
       .properties-grid-resp { grid-template-columns: 1fr !important; gap: 12px !important; }
       .projection-kpis-resp { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
 
-      /* Patrimonio — perfil financiero rows stack */
-      .profile-row {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 4px !important;
-      }
-      .profile-row span:last-child {
-        width: 100%;
-        text-align: left;
-      }
-
       /* Patrimonio — inner grids (keep 2-col but shrink text) */
       .patrimonio-grid-resp div[style*="grid-template-columns:1fr 1fr"] {
         grid-template-columns: 1fr 1fr !important;
@@ -1409,19 +1398,6 @@
       </div>
       <!-- Patrimonio mock -->
       <div class="fade-up patrimonio-grid-resp" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;">
-        <!-- Perfil financiero -->
-        <div class="mock-kpi" style="padding:28px;">
-          <div style="font-size:1rem;font-weight:700;margin-bottom:20px;">👤 Perfil Financiero</div>
-          <div style="display:flex;flex-direction:column;gap:14px;">
-            <div class="profile-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Valor UF actual</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">38.800</span></div>
-            <div class="profile-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Edad actual</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">32</span></div>
-            <div class="profile-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Edad de jubilación</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">70</span></div>
-            <div class="profile-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Gasto mensual al jubilarme</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">2.000.000</span></div>
-            <div class="profile-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Meta ahorro mensual</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">500.000</span></div>
-            <div class="profile-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Rentabilidad anual esperada (%)</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">7</span></div>
-          </div>
-          <div style="margin-top:18px;background:var(--accent);color:#fff;text-align:center;padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;">Guardar Perfil</div>
-        </div>
         <!-- Resumen patrimonio -->
         <div class="mock-kpi" style="padding:28px;">
           <div style="font-size:1rem;font-weight:700;margin-bottom:20px;">💰 Resumen Patrimonio</div>
