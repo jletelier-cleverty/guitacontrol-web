@@ -77,13 +77,19 @@
       text-decoration: none; transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--text); }
+    .nav-login {
+      font-weight: 600 !important;
+      color: var(--accent) !important;
+      font-size: 0.88rem !important;
+    }
+    .nav-login:hover { text-decoration: underline !important; }
     .nav-cta {
-      background: var(--text) !important; color: #fff !important;
+      background: var(--accent) !important; color: #fff !important;
       padding: 9px 22px !important; border-radius: 10px;
       font-weight: 600 !important; font-size: 0.85rem !important;
-      transition: opacity 0.2s !important;
+      transition: all 0.2s !important;
     }
-    .nav-cta:hover { opacity: 0.85; }
+    .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
 
     .mobile-menu-btn {
       display: none; background: none; border: none;
@@ -152,6 +158,11 @@
       background: var(--text); color: #fff;
     }
     .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-accent {
+      background: var(--accent) !important;
+      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
+    }
+    .btn-accent:hover { box-shadow: 0 6px 20px rgba(5, 150, 105, 0.45); }
     .btn-secondary {
       background: var(--bg); color: var(--text);
       border: 1px solid var(--border);
@@ -740,6 +751,12 @@
     @media (max-width: 900px) {
       .alcanza-split { grid-template-columns: 1fr; gap: 40px; }
     }
+    @media (max-width: 640px) {
+      .alcanza-mock-body { padding: 16px; }
+      .alcanza-input-row { flex-direction: column; gap: 8px; }
+      .alcanza-tags { gap: 6px; }
+      .alcanza-tag { font-size: 0.72rem; padding: 5px 12px; }
+    }
 
     /* ---- FAQ ---- */
     .faq-section {
@@ -861,24 +878,297 @@
       .pricing-cards { grid-template-columns: 1fr; max-width: 400px; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .mock-dashboard { grid-template-columns: repeat(2, 1fr); }
+
+      /* Hero mock dashboard */
+      .hero-mock-kpis { grid-template-columns: repeat(3, 1fr) !important; gap: 8px !important; }
+      .hero-mock-kpis .mock-kpi-value { font-size: 1.1rem !important; }
+      .hero-mock-charts { display: none !important; }
+
+      /* Patrimonio showcase */
+      .patrimonio-grid-resp { grid-template-columns: 1fr !important; }
+      .properties-grid-resp { grid-template-columns: 1fr !important; }
+      .projection-kpis-resp { grid-template-columns: repeat(2, 1fr) !important; }
+
+      /* Screenshot body */
+      .screenshot-body { padding: 16px !important; }
+
+      /* Section spacing */
+      .section { padding: 72px 20px; }
+      .how-inner { padding: 72px 20px; }
+      .pricing-inner { padding: 72px 20px; }
+      .testimonials { padding: 72px 20px; }
+      .faq-inner { padding: 72px 20px; }
+      .final-cta { padding: 72px 20px; }
     }
 
     @media (max-width: 640px) {
+      /* Mobile nav */
       .nav-links { display: none; }
       .nav-links.open {
         display: flex; flex-direction: column;
         position: absolute; top: 64px; left: 0; right: 0;
-        background: #fff; border-bottom: 1px solid var(--border);
-        padding: 16px 24px; gap: 16px;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+        padding: 20px 24px; gap: 16px;
         box-shadow: var(--shadow-lg);
+        animation: slideDown 0.2s ease;
+        padding-top: calc(20px + env(safe-area-inset-top, 0px));
       }
-      .mobile-menu-btn { display: block; }
-      .hero { padding: 120px 20px 60px; }
-      .hero h1 { font-size: 2rem; }
-      .features-grid { grid-template-columns: 1fr; }
-      .patrimonio-grid-resp { grid-template-columns: 1fr !important; }
-      .social-numbers { gap: 24px; }
-      .footer-inner { flex-direction: column; gap: 16px; }
+      .nav-links.open a { font-size: 0.95rem; padding: 4px 0; }
+      .nav-links.open .nav-cta {
+        text-align: center; padding: 12px 22px !important;
+        margin-top: 4px;
+      }
+      .mobile-menu-btn { display: block; -webkit-tap-highlight-color: transparent; }
+
+      /* Prevent horizontal overflow */
+      html, body { overflow-x: hidden; }
+      .mock-kpi, .patrimonio-section, .hero-screenshot { max-width: 100%; overflow: hidden; }
+
+      /* Hero */
+      .hero { padding: 110px 16px 48px; }
+      .hero h1 { font-size: 1.85rem; line-height: 1.15; }
+      .hero h1 br { display: none; }
+      .hero p { font-size: 0.95rem; margin-top: 16px; line-height: 1.6; }
+      .hero-actions { flex-direction: column; gap: 10px; align-items: stretch; }
+      .hero-actions .btn { justify-content: center; padding: 14px 24px; }
+      .hero-price { font-size: 0.82rem; }
+
+      /* Hero visual */
+      .hero-visual { padding: 0 8px; margin-top: 36px; }
+      .hero-mock-kpis { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+      .hero-mock-kpis .mock-kpi { padding: 10px !important; }
+      .hero-mock-kpis .mock-kpi-value { font-size: 0.92rem !important; }
+      .hero-mock-kpis .mock-kpi-label { font-size: 0.6rem !important; }
+      .hero-mock-charts { display: none !important; }
+      .browser-bar { padding: 8px 10px; }
+      .browser-dot { width: 8px; height: 8px; }
+      .browser-url { font-size: 0.65rem; padding: 4px 8px; }
+      .screenshot-body { padding: 12px !important; }
+
+      /* Sections — reduce padding */
+      .section { padding: 60px 16px; }
+      .how-inner { padding: 60px 16px; }
+      .pricing-inner { padding: 60px 16px; }
+      .testimonials { padding: 60px 16px; }
+      .faq-inner { padding: 60px 16px; }
+      .final-cta { padding: 52px 16px; }
+      .section-subtitle { max-width: 100%; }
+      .section-title { font-size: 1.6rem; }
+
+      /* Features */
+      .features-grid { grid-template-columns: 1fr; gap: 12px; }
+      .feature-card { padding: 20px; }
+      .feature-icon { width: 38px; height: 38px; font-size: 1.1rem; border-radius: 10px; margin-bottom: 12px; }
+      .feature-card h3 { font-size: 0.95rem; }
+      .feature-card p { font-size: 0.85rem; }
+
+      /* Social */
+      .social-proof { padding: 32px 16px; }
+      .social-proof p { font-size: 0.82rem; }
+      .social-numbers { gap: 20px; flex-wrap: wrap; justify-content: center; }
+      .social-stat-value { font-size: 1.3rem; }
+
+      /* How it works */
+      .how-step-number { width: 42px; height: 42px; font-size: 1rem; }
+      .how-step h3 { font-size: 0.98rem; }
+      .how-step p { font-size: 0.85rem; max-width: 100%; }
+
+      /* Education */
+      .education-visual { padding: 16px !important; }
+      .education-content h3 { font-size: 1.05rem; }
+      .education-content p { font-size: 0.88rem; }
+      .education-list li { font-size: 0.85rem; gap: 10px; }
+      .education-list li svg { width: 18px; height: 18px; }
+
+      /* Patrimonio showcase */
+      .patrimonio-section { padding: 60px 16px !important; overflow-x: hidden; }
+      .patrimonio-grid-resp { grid-template-columns: 1fr !important; gap: 16px !important; }
+      .patrimonio-grid-resp .mock-kpi { padding: 20px !important; overflow: hidden; }
+      .properties-grid-resp { grid-template-columns: 1fr !important; gap: 12px !important; }
+      .projection-kpis-resp { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+
+      /* Patrimonio — perfil financiero rows stack */
+      .profile-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+      }
+      .profile-row span:last-child {
+        width: 100%;
+        text-align: left;
+      }
+
+      /* Patrimonio — inner grids (keep 2-col but shrink text) */
+      .patrimonio-grid-resp div[style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+      }
+      .patrimonio-grid-resp div[style*="font-size:1.1rem"] {
+        font-size: 0.92rem !important;
+        word-break: break-word;
+        overflow-wrap: break-word;
+      }
+      .patrimonio-grid-resp div[style*="font-size:2rem"] {
+        font-size: 1.5rem !important;
+      }
+
+      /* Patrimonio — property cards inner grid */
+      .properties-grid-resp div[style*="grid-template-columns:1fr 1fr;gap:8px"] {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      /* Patrimonio — big net worth value */
+      .pat-neto-value { font-size: 1.6rem !important; }
+
+      /* Patrimonio — SVG chart responsive */
+      .patrimonio-section svg[viewBox="0 0 800 250"] {
+        width: 100%;
+        height: auto;
+        overflow: visible;
+      }
+
+      /* <br> — let text flow naturally on mobile */
+      .section-title br,
+      .final-cta h2 br { display: none; }
+
+      /* Patrimonio — projection KPI cards */
+      .projection-kpis-resp .mock-kpi {
+        padding: 12px 10px !important;
+        overflow: hidden;
+      }
+      .projection-kpis-resp .mock-kpi div[style*="font-size:1.1rem"] {
+        font-size: 0.85rem !important;
+        word-break: break-word;
+        overflow-wrap: break-word;
+      }
+      .projection-kpis-resp .mock-kpi div[style*="font-size:0.68rem"] {
+        font-size: 0.58rem !important;
+      }
+      .projection-kpis-resp .mock-kpi div[style*="font-size:0.7rem"] {
+        font-size: 0.62rem !important;
+      }
+
+      /* Me Alcanza mock — rows stack */
+      .alcanza-form-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+      }
+      .alcanza-form-row span:last-child {
+        width: 100%;
+        text-align: left;
+      }
+      .alcanza-mock-body { padding: 16px !important; }
+      .alcanza-mode-pills { flex-wrap: wrap; }
+      .alcanza-content h3 { font-size: 1.1rem; }
+      .alcanza-content p { font-size: 0.88rem; }
+      .alcanza-inner { padding: 60px 16px; }
+
+      /* Pricing */
+      .pricing-card { padding: 24px 20px; }
+      .pricing-price { font-size: 2rem; }
+      .pricing-name { font-size: 0.82rem; }
+      .pricing-desc { font-size: 0.82rem; }
+      .pricing-features li { font-size: 0.85rem; }
+      .pricing-btn { padding: 13px; font-size: 0.88rem; }
+
+      /* Testimonials */
+      .testimonial-card { padding: 20px; }
+      .testimonial-text { font-size: 0.88rem; }
+      .testimonial-name { font-size: 0.8rem; }
+      .testimonial-avatar { width: 32px; height: 32px; font-size: 0.78rem; }
+
+      /* FAQ */
+      .faq-question { font-size: 0.92rem; padding: 16px 0; }
+      .faq-answer-inner { font-size: 0.85rem; }
+
+      /* Footer */
+      .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+      .footer-text { font-size: 0.78rem; }
+
+      /* Buttons — better touch targets */
+      .btn { padding: 14px 24px; -webkit-tap-highlight-color: transparent; }
+      .btn:active { transform: scale(0.97); }
+
+      /* Safe area for notch phones */
+      body { padding-bottom: env(safe-area-inset-bottom, 0px); }
+    }
+
+    /* Extra small phones (< 380px) */
+    @media (max-width: 380px) {
+      .hero { padding: 100px 12px 40px; }
+      .hero h1 { font-size: 1.6rem; }
+      .hero p { font-size: 0.9rem; }
+      .hero-badge { font-size: 0.7rem; padding: 5px 10px 5px 6px; }
+      .hero-badge span { font-size: 0.65rem; padding: 2px 6px; }
+      .hero-visual { padding: 0 4px; }
+      .hero-mock-kpis { gap: 6px !important; }
+      .hero-mock-kpis .mock-kpi { padding: 8px !important; }
+      .hero-mock-kpis .mock-kpi-value { font-size: 0.82rem !important; }
+      .hero-mock-kpis .mock-kpi-label { font-size: 0.55rem !important; }
+
+      /* Sections */
+      .section { padding: 48px 12px; }
+      .section-title { font-size: 1.4rem; }
+      .section-subtitle { font-size: 0.92rem; }
+      .how-inner { padding: 48px 12px; }
+      .pricing-inner { padding: 48px 12px; }
+      .testimonials { padding: 48px 12px; }
+      .faq-inner { padding: 48px 12px; }
+      .final-cta { padding: 44px 12px; }
+      .patrimonio-section { padding: 48px 12px !important; }
+      .alcanza-inner { padding: 48px 12px; }
+      .social-proof { padding: 28px 12px; }
+
+      /* Feature cards */
+      .feature-card { padding: 16px; }
+      .feature-card p { font-size: 0.82rem; }
+
+      /* Projection KPIs — stack to 1 col on tiny screens */
+      .projection-kpis-resp { grid-template-columns: 1fr 1fr !important; }
+
+      /* Patrimonio — shrink more for tiny screens */
+      .patrimonio-grid-resp .mock-kpi { padding: 16px !important; }
+      .patrimonio-grid-resp div[style*="font-size:1.1rem"] {
+        font-size: 0.82rem !important;
+      }
+      .patrimonio-grid-resp div[style*="font-size:2rem"] {
+        font-size: 1.3rem !important;
+      }
+      .pat-neto-value { font-size: 1.3rem !important; }
+      .properties-grid-resp div[style*="padding:20px"] {
+        padding: 14px !important;
+      }
+      .properties-grid-resp div[style*="font-size:0.92rem"] {
+        font-size: 0.82rem !important;
+      }
+
+      /* Alcanza */
+      .alcanza-tags { gap: 5px; }
+      .alcanza-tag { font-size: 0.68rem; padding: 4px 10px; }
+
+      /* Social */
+      .social-numbers { flex-direction: column; gap: 14px; }
+
+      /* Pricing */
+      .pricing-card { padding: 20px 16px; }
+      .pricing-price { font-size: 1.8rem; }
+
+      /* Testimonials */
+      .testimonial-card { padding: 16px; }
+      .testimonial-text { font-size: 0.85rem; }
+
+      /* CTA */
+      .final-cta h2 { font-size: 1.4rem; }
+      .final-cta p { font-size: 0.92rem; }
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -898,7 +1188,8 @@
         <a href="#como-funciona">Como funciona</a>
         <a href="#pricing">Precio</a>
         <a href="#faq">FAQ</a>
-        <a href="#cta" class="nav-cta">Empezar gratis</a>
+        <a href="https://app.guitacontrol.com/login.html" class="nav-login">Iniciar sesion</a>
+        <a href="https://app.guitacontrol.com/login.html" class="nav-cta">Crear cuenta gratis</a>
       </div>
       <button class="mobile-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -915,13 +1206,13 @@
     <h1>Deja de preguntarte<br><em>a donde se fue tu plata</em></h1>
     <p>Importa las cartolas de tu banco y tarjetas de credito, deja que GuitaControl categorice todo automatico, y por fin entiende en que gastas. Simple. Sin planillas. Sin vueltas.</p>
     <div class="hero-actions">
-      <a href="#cta" class="btn btn-primary">
-        Empezar gratis
+      <a href="https://app.guitacontrol.com/login.html" class="btn btn-primary btn-accent">
+        Crear cuenta gratis
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="#features" class="btn btn-secondary">Ver como funciona</a>
     </div>
-    <p class="hero-price">Gratis para siempre con el plan basico. <strong>$1 USD/mes</strong> para todo ilimitado.</p>
+    <p class="hero-price">Listo en 2 minutos. Sin tarjeta. <strong>Gratis para siempre</strong> o $1/mes para todo.</p>
   </section>
 
   <!-- HERO VISUAL -->
@@ -935,7 +1226,7 @@
       </div>
       <div class="screenshot-body">
         <!-- KPIs -->
-        <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:16px;">
+        <div class="hero-mock-kpis" style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:16px;">
           <div class="mock-kpi" style="border-left:3px solid #059669;">
             <div class="mock-kpi-label" style="display:flex;align-items:center;gap:4px;">📈 Ingresos</div>
             <div class="mock-kpi-value green">$3.500.000</div>
@@ -962,7 +1253,7 @@
           </div>
         </div>
         <!-- Charts row -->
-        <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:16px;">
+        <div class="hero-mock-charts" style="display:grid;grid-template-columns:1fr 1.4fr;gap:16px;">
           <!-- Donut -->
           <div class="mock-kpi" style="padding:20px;text-align:center;position:relative;">
             <div style="font-size:0.8rem;font-weight:600;color:var(--text-secondary);text-align:left;margin-bottom:12px;">Distribucion</div>
@@ -1217,7 +1508,7 @@
   </section>
 
   <!-- PATRIMONIO SHOWCASE -->
-  <section style="background:var(--bg-subtle);padding:100px 24px;">
+  <section class="patrimonio-section" style="background:var(--bg-subtle);padding:100px 24px;">
     <div style="max-width:1120px;margin:0 auto;">
       <div class="fade-up" style="text-align:center;">
         <div class="section-label">Patrimonio y proyecciones</div>
@@ -1225,17 +1516,17 @@
         <div class="section-subtitle" style="margin:12px auto 0;">Registra propiedades, deudas e inversiones. Ve tu patrimonio neto, perfil financiero y una proyeccion real hasta tu jubilacion.</div>
       </div>
       <!-- Patrimonio mock -->
-      <div class="fade-up" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;">
+      <div class="fade-up patrimonio-grid-resp" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;">
         <!-- Perfil financiero -->
         <div class="mock-kpi" style="padding:28px;">
           <div style="font-size:1rem;font-weight:700;margin-bottom:20px;">👤 Perfil Financiero</div>
           <div style="display:flex;flex-direction:column;gap:14px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Valor UF actual</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">38.800</span></div>
-            <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Edad actual</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">32</span></div>
-            <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Edad de jubilacion</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">70</span></div>
-            <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Gasto mensual al jubilarme</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">2.000.000</span></div>
-            <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Meta ahorro mensual</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">500.000</span></div>
-            <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Rentabilidad anual esperada (%)</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">7</span></div>
+            <div class="profile-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Valor UF actual</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">38.800</span></div>
+            <div class="profile-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Edad actual</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">32</span></div>
+            <div class="profile-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Edad de jubilacion</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">70</span></div>
+            <div class="profile-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Gasto mensual al jubilarme</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">2.000.000</span></div>
+            <div class="profile-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Meta ahorro mensual</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">500.000</span></div>
+            <div class="profile-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Rentabilidad anual esperada (%)</span><span style="font-size:0.88rem;font-weight:600;background:var(--bg-subtle);padding:6px 14px;border-radius:8px;border:1px solid var(--border);">7</span></div>
           </div>
           <div style="margin-top:18px;background:var(--accent);color:#fff;text-align:center;padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;">Guardar Perfil</div>
         </div>
@@ -1244,7 +1535,7 @@
           <div style="font-size:1rem;font-weight:700;margin-bottom:20px;">💰 Resumen Patrimonio</div>
           <div style="text-align:center;margin-bottom:20px;">
             <div style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#4f46e5;">Patrimonio Neto</div>
-            <div style="font-size:2rem;font-weight:800;color:#4f46e5;">$68.200.000</div>
+            <div class="pat-neto-value" style="font-size:2rem;font-weight:800;color:#4f46e5;">$68.200.000</div>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
             <div>
@@ -1281,7 +1572,7 @@
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
             <div style="font-size:1rem;font-weight:700;">🏠 Propiedades e Inversiones</div>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div class="properties-grid-resp" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
             <div style="background:var(--bg-subtle);border-radius:12px;padding:20px;border:1px solid var(--border);">
               <div style="font-size:0.92rem;font-weight:700;">Depto Santiago Centro</div>
               <div style="font-size:0.78rem;color:var(--text-light);margin:4px 0 12px;">Propiedad</div>
@@ -1360,7 +1651,7 @@
             <text x="476" y="8" font-size="8" fill="#64748b">Numero FIRE</text>
           </svg>
           <!-- KPIs bottom -->
-          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px;">
+          <div class="projection-kpis-resp" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px;">
             <div class="mock-kpi" style="text-align:center;padding:14px;">
               <div style="font-size:0.68rem;font-weight:600;text-transform:uppercase;color:var(--text-light);">Patrimonio a los 70</div>
               <div style="font-size:1.1rem;font-weight:800;">$842.000.000</div>
@@ -1403,12 +1694,12 @@
           <div class="alcanza-mock-body">
             <div style="font-size:0.92rem;font-weight:700;margin-bottom:16px;">Que quieres comprar?</div>
             <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:20px;">
-              <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Tipo</span><span style="font-size:0.88rem;font-weight:500;background:#fff;padding:8px 14px;border-radius:8px;border:1px solid var(--border);">🚗 Vehiculo</span></div>
-              <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Nombre</span><span style="font-size:0.88rem;font-weight:500;background:#fff;padding:8px 14px;border-radius:8px;border:1px solid var(--border);">Toyota Corolla 2024</span></div>
-              <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Valor total ($)</span><span style="font-size:0.88rem;font-weight:600;background:#fff;padding:8px 14px;border-radius:8px;border:1px solid var(--border);">15.000.000</span></div>
-              <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Ahorrado / en caja ($)</span><span style="font-size:0.88rem;font-weight:600;background:#fff;padding:8px 14px;border-radius:8px;border:1px solid var(--border);">5.000.000</span></div>
+              <div class="alcanza-form-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Tipo</span><span style="font-size:0.88rem;font-weight:500;background:#fff;padding:8px 14px;border-radius:8px;border:1px solid var(--border);">🚗 Vehiculo</span></div>
+              <div class="alcanza-form-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Nombre</span><span style="font-size:0.88rem;font-weight:500;background:#fff;padding:8px 14px;border-radius:8px;border:1px solid var(--border);">Toyota Corolla 2024</span></div>
+              <div class="alcanza-form-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Valor total ($)</span><span style="font-size:0.88rem;font-weight:600;background:#fff;padding:8px 14px;border-radius:8px;border:1px solid var(--border);">15.000.000</span></div>
+              <div class="alcanza-form-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Ahorrado / en caja ($)</span><span style="font-size:0.88rem;font-weight:600;background:#fff;padding:8px 14px;border-radius:8px;border:1px solid var(--border);">5.000.000</span></div>
             </div>
-            <div style="display:flex;gap:10px;margin-bottom:16px;">
+            <div class="alcanza-mode-pills" style="display:flex;gap:10px;margin-bottom:16px;">
               <div style="padding:8px 18px;border-radius:100px;font-size:0.82rem;font-weight:600;background:#4f46e5;color:#fff;border:2px solid #4f46e5;">Al contado</div>
               <div style="padding:8px 18px;border-radius:100px;font-size:0.82rem;font-weight:600;color:var(--text-secondary);border:2px solid var(--border);">Con credito</div>
             </div>
@@ -1469,7 +1760,7 @@
               Funciones Pro
             </li>
           </ul>
-          <a href="#cta" class="pricing-btn pricing-btn-outline">Empezar gratis</a>
+          <a href="https://app.guitacontrol.com/login.html" class="pricing-btn pricing-btn-outline">Crear cuenta gratis</a>
         </div>
         <div class="pricing-card featured">
           <div class="pricing-popular">Popular</div>
@@ -1502,7 +1793,7 @@
               "Me alcanza?" — simulador de compras
             </li>
           </ul>
-          <a href="#cta" class="pricing-btn pricing-btn-fill">Empezar con Pro</a>
+          <a href="https://app.guitacontrol.com/login.html" class="pricing-btn pricing-btn-fill">Probar Pro gratis</a>
         </div>
       </div>
     </div>
@@ -1611,13 +1902,14 @@
   <!-- FINAL CTA -->
   <section class="final-cta" id="cta">
     <div class="fade-up">
-      <h2>Empieza hoy.<br>Es gratis.</h2>
-      <p>En 2 minutos vas a saber exactamente en que gastas. Sin tarjeta de credito, sin compromisos.</p>
-      <a href="https://app.guitacontrol.com/login.html" class="btn btn-primary" style="font-size:1.05rem;padding:16px 36px;">
+      <h2>Tu plata merece orden.<br><em style="font-style:normal;color:var(--accent);">Empieza ahora.</em></h2>
+      <p>Sube tu primera cartola en 2 minutos y ve exactamente en que gastas. Sin tarjeta, sin compromisos, sin letra chica.</p>
+      <a href="https://app.guitacontrol.com/login.html" class="btn btn-primary btn-accent" style="font-size:1.05rem;padding:16px 36px;">
         Crear mi cuenta gratis
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <p class="hero-price" style="margin-top:16px;">Sin tarjeta de credito. Upgrade a Pro por solo $1/mes cuando quieras.</p>
+      <p class="hero-price" style="margin-top:16px;">Gratis para siempre. Upgrade a Pro por $1/mes cuando quieras.</p>
+      <a href="https://app.guitacontrol.com/login.html" style="display:inline-block;margin-top:12px;font-size:0.88rem;color:var(--text-secondary);text-decoration:underline;">Ya tengo cuenta — Iniciar sesion</a>
     </div>
   </section>
 
