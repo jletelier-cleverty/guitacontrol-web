@@ -504,9 +504,9 @@
     }
     .pricing-cards {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      max-width: 720px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 960px;
       margin: 48px auto 0;
     }
     .pricing-card {
@@ -643,144 +643,6 @@
       font-size: 0.75rem; color: var(--text-light);
     }
 
-    /* ---- ME ALCANZA ---- */
-    .alcanza-section {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: var(--bg);
-    }
-    .alcanza-inner {
-      max-width: 1120px; margin: 0 auto;
-      padding: 100px 24px;
-    }
-    .alcanza-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-      margin-top: 48px;
-    }
-    .alcanza-mock {
-      background: var(--bg-subtle);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      overflow: hidden;
-    }
-    .alcanza-mock-header {
-      padding: 20px 24px;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.92rem;
-      font-weight: 700;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .alcanza-mock-body { padding: 24px; }
-    .alcanza-input-row {
-      display: flex; gap: 12px;
-      margin-bottom: 20px;
-    }
-    .alcanza-input {
-      flex: 1;
-      padding: 12px 14px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      font-family: var(--font);
-      font-size: 0.88rem;
-      background: #fff;
-      color: var(--text);
-      outline: none;
-    }
-    .alcanza-input::placeholder { color: var(--text-light); }
-    .alcanza-input-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-light);
-      margin-bottom: 6px;
-    }
-    .alcanza-input-group { flex: 1; }
-    .alcanza-result {
-      background: #fff;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      padding: 20px;
-    }
-    .alcanza-verdict {
-      display: flex; align-items: center; gap: 12px;
-      margin-bottom: 16px;
-    }
-    .alcanza-verdict-icon {
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem;
-    }
-    .alcanza-verdict-icon.yes {
-      background: #ecfdf5; color: #059669;
-    }
-    .alcanza-verdict-icon.maybe {
-      background: #fffbeb; color: #d97706;
-    }
-    .alcanza-verdict-text {
-      font-size: 1.05rem; font-weight: 700;
-    }
-    .alcanza-verdict-sub {
-      font-size: 0.82rem; color: var(--text-secondary);
-    }
-    .alcanza-bars { display: flex; flex-direction: column; gap: 10px; }
-    .alcanza-bar-item { }
-    .alcanza-bar-label {
-      display: flex; justify-content: space-between;
-      font-size: 0.78rem; font-weight: 600;
-      color: var(--text-secondary);
-      margin-bottom: 4px;
-    }
-    .alcanza-bar-track {
-      height: 8px; border-radius: 4px;
-      background: #f1f5f9;
-      overflow: hidden;
-    }
-    .alcanza-bar-fill {
-      height: 100%; border-radius: 4px;
-      transition: width 0.6s ease;
-    }
-    .alcanza-bar-fill.green { background: linear-gradient(90deg, #059669, #34d399); }
-    .alcanza-bar-fill.yellow { background: linear-gradient(90deg, #d97706, #fbbf24); }
-    .alcanza-bar-fill.red { background: linear-gradient(90deg, #dc2626, #f87171); }
-
-    .alcanza-content h3 {
-      font-size: 1.3rem; font-weight: 700;
-      line-height: 1.3; margin-bottom: 16px;
-    }
-    .alcanza-content p {
-      font-size: 0.92rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-    .alcanza-tags {
-      display: flex; flex-wrap: wrap; gap: 8px;
-      margin-top: 20px;
-    }
-    .alcanza-tag {
-      padding: 6px 14px;
-      border-radius: 100px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      background: var(--bg-subtle);
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-    }
-
-    @media (max-width: 900px) {
-      .alcanza-split { grid-template-columns: 1fr; gap: 40px; }
-    }
-    @media (max-width: 640px) {
-      .alcanza-mock-body { padding: 16px; }
-      .alcanza-input-row { flex-direction: column; gap: 8px; }
-      .alcanza-tags { gap: 6px; }
-      .alcanza-tag { font-size: 0.72rem; padding: 5px 12px; }
-    }
 
     /* ---- FAQ ---- */
     .faq-section {
@@ -899,7 +761,7 @@
       .features-grid { grid-template-columns: repeat(2, 1fr); }
       .how-steps { grid-template-columns: 1fr; gap: 40px; }
       .education-split { grid-template-columns: 1fr; gap: 40px; }
-      .pricing-cards { grid-template-columns: 1fr; max-width: 400px; }
+      .pricing-cards { grid-template-columns: 1fr; max-width: 420px; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .mock-dashboard { grid-template-columns: repeat(2, 1fr); }
 
@@ -1083,22 +945,6 @@
         font-size: 0.62rem !important;
       }
 
-      /* Me Alcanza mock — rows stack */
-      .alcanza-form-row {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 4px !important;
-      }
-      .alcanza-form-row span:last-child {
-        width: 100%;
-        text-align: left;
-      }
-      .alcanza-mock-body { padding: 16px !important; }
-      .alcanza-mode-pills { flex-wrap: wrap; }
-      .alcanza-content h3 { font-size: 1.1rem; }
-      .alcanza-content p { font-size: 0.88rem; }
-      .alcanza-inner { padding: 60px 16px; }
-
       /* Pricing */
       .pricing-card { padding: 24px 20px; }
       .pricing-price { font-size: 2rem; }
@@ -1153,7 +999,6 @@
       .faq-inner { padding: 48px 12px; }
       .final-cta { padding: 44px 12px; }
       .patrimonio-section { padding: 48px 12px !important; }
-      .alcanza-inner { padding: 48px 12px; }
       .social-proof { padding: 28px 12px; }
 
       /* Feature cards */
@@ -1179,9 +1024,6 @@
         font-size: 0.82rem !important;
       }
 
-      /* Alcanza */
-      .alcanza-tags { gap: 5px; }
-      .alcanza-tag { font-size: 0.68rem; padding: 4px 10px; }
 
       /* Social */
       .social-numbers { flex-direction: column; gap: 14px; }
@@ -1236,7 +1078,7 @@
       <span>NUEVO</span>
       Estrategia de inversión con IA + Top instrumentos en tiempo real
     </div>
-    <h1>Tu plata trabajando <br><em>con inteligencia</em></h1>
+    <h1>Tu plata trabajando <br> <em>con inteligencia</em></h1>
     <p>Controla tus gastos, diseña tu estrategia de inversión con un experto IA, y accede al ranking real de los mejores fondos e instrumentos del mercado. Sin conflictos de interés. Sin venderte nada.</p>
     <div class="hero-actions">
       <a href="https://app.guitacontrol.com/login.html" class="btn btn-primary btn-accent">
@@ -1244,7 +1086,7 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
-    <p class="hero-price">Listo en 2 minutos. Sin tarjeta. <strong>Gratis para siempre</strong> o $1/mes para todo.</p>
+    <p class="hero-price">Listo en 2 minutos. Sin tarjeta. <strong>Gratis para siempre</strong> o desde $1/mes.</p>
   </section>
 
   <!-- HERO VISUAL -->
@@ -1403,7 +1245,7 @@
   <section class="section" id="features">
     <div class="fade-up">
       <div class="section-label">Funciones</div>
-      <div class="section-title">Control, estrategia <br>y recomendaciones reales.</div>
+      <div class="section-title">Control, estrategia <br> y recomendaciones reales.</div>
       <div class="section-subtitle">No solo te decimos en qué gastas. Te mostramos cómo invertir mejor, con datos reales del mercado y sin venderte nada.</div>
     </div>
     <div class="features-grid fade-up">
@@ -1475,7 +1317,7 @@
         </div>
         <div class="how-step">
           <div class="how-step-number">2</div>
-          <h3>Revisa las categorias</h3>
+          <h3>Revisa las categorías</h3>
           <p>El sistema categoriza automático. Tú solo corriges lo que falte — y aprende para la próxima.</p>
         </div>
         <div class="how-step">
@@ -1727,50 +1569,6 @@
     </div>
   </section>
 
-  <!-- ME ALCANZA -->
-  <section class="alcanza-section" id="me-alcanza">
-    <div class="alcanza-inner">
-      <div class="fade-up" style="text-align:center;">
-        <div class="section-label">Nueva función</div>
-        <div class="section-title">Me alcanza?</div>
-        <div class="section-subtitle" style="margin:12px auto 0;">Antes de comprar, preguntale a tu plata. GuitaControl te dice si puedes darte ese gusto sin desarmar tu mes.</div>
-      </div>
-      <div class="alcanza-split fade-up">
-        <div class="alcanza-mock">
-          <div class="alcanza-mock-header">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-            Me Alcanza?
-          </div>
-          <div class="alcanza-mock-body">
-            <div style="font-size:0.92rem;font-weight:700;margin-bottom:16px;">Que quieres comprar?</div>
-            <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:20px;">
-              <div class="alcanza-form-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Tipo</span><span style="font-size:0.88rem;font-weight:500;background:#fff;padding:8px 14px;border-radius:8px;border:1px solid var(--border);">🚗 Vehiculo</span></div>
-              <div class="alcanza-form-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Nombre</span><span style="font-size:0.88rem;font-weight:500;background:#fff;padding:8px 14px;border-radius:8px;border:1px solid var(--border);">Toyota Corolla 2024</span></div>
-              <div class="alcanza-form-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Valor total ($)</span><span style="font-size:0.88rem;font-weight:600;background:#fff;padding:8px 14px;border-radius:8px;border:1px solid var(--border);">15.000.000</span></div>
-              <div class="alcanza-form-row" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.85rem;color:var(--text-secondary);">Ahorrado / en caja ($)</span><span style="font-size:0.88rem;font-weight:600;background:#fff;padding:8px 14px;border-radius:8px;border:1px solid var(--border);">5.000.000</span></div>
-            </div>
-            <div class="alcanza-mode-pills" style="display:flex;gap:10px;margin-bottom:16px;">
-              <div style="padding:8px 18px;border-radius:100px;font-size:0.82rem;font-weight:600;background:#4f46e5;color:#fff;border:2px solid #4f46e5;">Al contado</div>
-              <div style="padding:8px 18px;border-radius:100px;font-size:0.82rem;font-weight:600;color:var(--text-secondary);border:2px solid var(--border);">Con crédito</div>
-            </div>
-            <div style="background:#4f46e5;color:#fff;text-align:center;padding:13px;border-radius:10px;font-weight:600;font-size:0.92rem;">Calcular</div>
-          </div>
-        </div>
-        <div class="alcanza-content">
-          <h3>La pregunta que te haces cada vez que quieres comprar algo.</h3>
-          <p>Pones lo que quieres comprar, el precio, y GuitaControl cruza eso con tus ingresos, gastos, ahorro y metas. Te dice si te alcanza, cuánto impacta tu mes, y si te conviene esperar.</p>
-          <p>No es un "no gastes". Es un "gasta con informacion".</p>
-          <div class="alcanza-tags">
-            <div class="alcanza-tag">Cruza con tu balance real</div>
-            <div class="alcanza-tag">Mide impacto en ahorro</div>
-            <div class="alcanza-tag">Calcula efecto en FIRE</div>
-            <div class="alcanza-tag">En cuotas o al contado</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- PRICING -->
   <section class="pricing-section" id="pricing">
     <div class="pricing-inner">
@@ -1780,6 +1578,7 @@
         <div class="section-subtitle" style="margin:12px auto 0;">Literalmente. Y te ahorra mucho más de lo que cuesta.</div>
       </div>
       <div class="pricing-cards fade-up">
+        <!-- GRATIS -->
         <div class="pricing-card">
           <div class="pricing-name">Gratis</div>
           <div class="pricing-price">$0</div>
@@ -1787,11 +1586,7 @@
           <ul class="pricing-features">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-              Transacciones ilimitadas
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-              Dashboard completo + graficos
+              Dashboard completo + gráficos
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
@@ -1799,28 +1594,33 @@
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-              Ultimos 2 meses de historial
+              Últimos 2 meses de historial
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Coach financiero básico
             </li>
             <li class="disabled">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-              Historial completo
+              Estrategia IA
             </li>
             <li class="disabled">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-              Funciones Pro
+              Inversiones y ranking
             </li>
           </ul>
-          <a href="https://app.guitacontrol.com/login.html" class="pricing-btn pricing-btn-outline">Crear cuenta gratis</a>
+          <a href="https://app.guitacontrol.com/login.html" class="pricing-btn pricing-btn-outline">Empezar gratis</a>
         </div>
+        <!-- BÁSICO -->
         <div class="pricing-card featured">
           <div class="pricing-popular">Popular</div>
-          <div class="pricing-name">Pro</div>
+          <div class="pricing-name">Básico</div>
           <div class="pricing-price">$1 <span>USD/mes</span></div>
-          <div class="pricing-desc">Todo desbloqueado. Paga con Mercado Pago.</div>
+          <div class="pricing-desc">Todo lo esencial desbloqueado.</div>
           <ul class="pricing-features">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-              Todo lo gratis, sin limites
+              Todo lo gratis, sin límites
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
@@ -1832,7 +1632,7 @@
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-              Top 10 instrumentos por categoría
+              Patrimonio, metas y coaching
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
@@ -1840,10 +1640,44 @@
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-              Patrimonio, metas y coaching
+              Exportar datos CSV
             </li>
           </ul>
-          <a href="https://app.guitacontrol.com/login.html" class="pricing-btn pricing-btn-fill">Probar Pro gratis</a>
+          <a href="https://app.guitacontrol.com/login.html" class="pricing-btn pricing-btn-fill">Probar 7 días gratis</a>
+        </div>
+        <!-- PRO -->
+        <div class="pricing-card" style="border-color:var(--accent);background:linear-gradient(135deg,#ecfdf5 0%,#fff 100%);">
+          <div class="pricing-popular" style="background:var(--accent);">Pro</div>
+          <div class="pricing-name">Pro</div>
+          <div class="pricing-price">$3 <span>USD/mes</span></div>
+          <div class="pricing-desc">Para el que ya gestiona su plata en serio.</div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Todo lo Básico incluido
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Top 10 instrumentos con retornos reales
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Sección Inversiones completa
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Asesor con instrumentos + semáforo
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Inmobiliario personalizado por ingreso
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Comparador de instrumentos
+            </li>
+          </ul>
+          <a href="https://app.guitacontrol.com/login.html" class="pricing-btn pricing-btn-fill" style="background:var(--accent);">Probar 7 días gratis</a>
         </div>
       </div>
     </div>
@@ -1902,7 +1736,7 @@
       <div class="faq-list fade-up">
         <div class="faq-item">
           <button class="faq-question">
-            Necesito conectar mi banco?
+            ¿Necesito conectar mi banco?
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
           </button>
           <div class="faq-answer">
@@ -1911,7 +1745,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            Que bancos soporta?
+            ¿Qué bancos soporta?
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
           </button>
           <div class="faq-answer">
@@ -1920,25 +1754,25 @@
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            Mis datos están seguros?
+            ¿Mis datos están seguros?
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Si. Usamos Supabase con autenticacion segura y Row Level Security. Solo tu puedes ver tus datos. No compartimos ni vendemos informacion a nadie.</div>
+            <div class="faq-answer-inner">Sí. Usamos Supabase con autenticación segura y Row Level Security. Solo tú puedes ver tus datos. No compartimos ni vendemos información a nadie.</div>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            Puedo cancelar cuando quiera?
+            ¿Puedo cancelar cuando quiera?
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Si, sin vueltas. Cancelas y tu plan vuelve al gratuito al final del periodo. Tus datos se mantienen, no se borran.</div>
+            <div class="faq-answer-inner">Sí, sin vueltas. Cancelas y tu plan vuelve al gratuito al final del período. Tus datos se mantienen, no se borran.</div>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            Funciona en mi país?
+            ¿Funciona en mi país?
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
           </button>
           <div class="faq-answer">
@@ -1988,7 +1822,7 @@
         Crear mi cuenta gratis
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <p class="hero-price" style="margin-top:16px;">Gratis para siempre. Upgrade a Pro por $1/mes cuando quieras.</p>
+      <p class="hero-price" style="margin-top:16px;">Gratis para siempre. Planes desde $1/mes cuando quieras más.</p>
       <a href="https://app.guitacontrol.com/login.html" style="display:inline-block;margin-top:12px;font-size:0.88rem;color:var(--text-secondary);text-decoration:underline;">Ya tengo cuenta — Iniciar sesión</a>
     </div>
   </section>
@@ -1998,7 +1832,7 @@
     <div class="footer-inner">
       <div class="footer-text">GuitaControl &copy; 2025. Hecho en Chile.</div>
       <div class="footer-links">
-        <a href="#">Terminos</a>
+        <a href="#">Términos</a>
         <a href="#">Privacidad</a>
         <a href="mailto:hola@guitacontrol.com">Contacto</a>
       </div>
