@@ -248,6 +248,32 @@
     }
     .hero-price strong { color: var(--text-secondary); }
 
+    /* ---- DEMO CTA SECTION ---- */
+    .demo-cta-section {
+      max-width: 960px; margin: 60px auto 0; padding: 0 24px;
+    }
+    .demo-cta-inner {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      border-radius: 20px; padding: 48px 40px;
+      display: flex; align-items: center; justify-content: space-between; gap: 32px;
+      box-shadow: 0 8px 32px rgba(79, 70, 229, 0.25);
+    }
+    .demo-cta-text h2 {
+      color: #fff; font-size: 1.6rem; font-weight: 800; margin-bottom: 8px;
+    }
+    .demo-cta-text p {
+      color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.5; max-width: 420px;
+    }
+    .demo-cta-button {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #fff; color: #4f46e5; padding: 16px 32px;
+      border-radius: 12px; font-size: 1rem; font-weight: 700;
+      text-decoration: none; white-space: nowrap;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .demo-cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+
     /* ---- HERO VISUAL ---- */
     .hero-visual {
       max-width: 1040px; margin: 60px auto 0;
@@ -886,6 +912,13 @@
       html, body { overflow-x: hidden; }
       .mock-kpi, .patrimonio-section, .hero-screenshot { max-width: 100%; overflow: hidden; }
 
+      /* Demo CTA */
+      .demo-cta-inner {
+        flex-direction: column; text-align: center; padding: 32px 24px; gap: 20px;
+      }
+      .demo-cta-text p { max-width: 100%; }
+      .demo-cta-button { width: 100%; justify-content: center; padding: 14px 24px; }
+
       /* Hero */
       .hero { padding: 110px 16px 48px; }
       .hero h1 { font-size: 1.85rem; line-height: 1.15; }
@@ -1308,6 +1341,19 @@
         <div class="social-stat-value">$0</div>
         <div class="social-stat-label">Para empezar</div>
       </div>
+    </div>
+  </section>
+
+  <!-- DEMO CTA -->
+  <section class="demo-cta-section fade-up">
+    <div class="demo-cta-inner">
+      <div class="demo-cta-text">
+        <h2>¿Quieres ver cómo funciona?</h2>
+        <p>Explora la app con datos de ejemplo. Sin registro, sin tarjeta, sin compromiso. En 30 segundos entiendes todo.</p>
+      </div>
+      <a href="https://app.guitacontrol.com/index.html?demo=true" class="demo-cta-button">
+        Ver demo interactiva →
+      </a>
     </div>
   </section>
 
