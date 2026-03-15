@@ -703,9 +703,12 @@
     }
     .testimonials-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       margin-top: 48px;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .testimonial-card {
       padding: 28px;
@@ -1445,232 +1448,6 @@
     </div>
   </section>
 
-  <!-- EDUCATION -->
-  <section class="section">
-    <div class="fade-up">
-      <div class="section-label">Inteligencia financiera</div>
-      <div class="section-title">Un experto IA<br>que trabaja para ti</div>
-    </div>
-    <div class="education-split fade-up">
-      <div class="education-content">
-        <h3>No es un chatbot. Es un asesor que conoce el mercado chileno.</h3>
-        <p>Analiza tu perfil, revisa los rendimientos reales de cientos de instrumentos, y te recomienda una estrategia personalizada. Con tooltips ℹ️ que explican cada concepto y cada número. Sin jerga, sin conflictos de interés.</p>
-        <ul class="education-list">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            Quiz inteligente que define tu perfil y portafolio ideal
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            Top 10 instrumentos reales con retornos a 1, 6 y 12 meses
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            Comunas de inversión filtradas por tu capacidad de crédito
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            Asesor para plata inesperada: te dice qué hacer y dónde ponerla
-          </li>
-        </ul>
-      </div>
-      <div class="education-visual" style="padding:24px;">
-        <div style="font-size:0.95rem;font-weight:700;margin-bottom:16px;">Salud Financiera</div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="background:#fff;border-radius:10px;padding:14px 16px;border:1px solid var(--border);">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-              <span style="font-size:0.85rem;font-weight:600;">🏠 Dividendo / Vivienda</span>
-              <span style="width:14px;height:14px;border-radius:50%;background:#dc2626;display:inline-block;"></span>
-            </div>
-            <div style="background:#f1f5f9;border-radius:4px;height:7px;overflow:hidden;"><div style="width:85%;height:100%;background:linear-gradient(90deg,#dc2626,#f87171);border-radius:4px;"></div></div>
-            <div style="font-size:0.72rem;color:var(--text-light);margin-top:4px;">34% de tu ingreso (recomendado: 30%)</div>
-          </div>
-          <div style="background:#fff;border-radius:10px;padding:14px 16px;border:1px solid var(--border);">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-              <span style="font-size:0.85rem;font-weight:600;">🛒 Supermercado</span>
-              <span style="width:14px;height:14px;border-radius:50%;background:#059669;display:inline-block;"></span>
-            </div>
-            <div style="background:#f1f5f9;border-radius:4px;height:7px;overflow:hidden;"><div style="width:35%;height:100%;background:linear-gradient(90deg,#059669,#34d399);border-radius:4px;"></div></div>
-            <div style="font-size:0.72rem;color:var(--text-light);margin-top:4px;">8% de tu ingreso (recomendado: 15%)</div>
-          </div>
-          <div style="background:#fff;border-radius:10px;padding:14px 16px;border:1px solid var(--border);">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-              <span style="font-size:0.85rem;font-weight:600;">🍽️ Restaurantes / Comida</span>
-              <span style="width:14px;height:14px;border-radius:50%;background:#d97706;display:inline-block;"></span>
-            </div>
-            <div style="background:#f1f5f9;border-radius:4px;height:7px;overflow:hidden;"><div style="width:70%;height:100%;background:linear-gradient(90deg,#d97706,#fbbf24);border-radius:4px;"></div></div>
-            <div style="font-size:0.72rem;color:var(--text-light);margin-top:4px;">7% de tu ingreso (recomendado: 8%)</div>
-          </div>
-          <div style="background:#fff;border-radius:10px;padding:14px 16px;border:1px solid var(--border);">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-              <span style="font-size:0.85rem;font-weight:600;">🛍️ Compras Online</span>
-              <span style="width:14px;height:14px;border-radius:50%;background:#dc2626;display:inline-block;"></span>
-            </div>
-            <div style="background:#f1f5f9;border-radius:4px;height:7px;overflow:hidden;"><div style="width:90%;height:100%;background:linear-gradient(90deg,#dc2626,#f87171);border-radius:4px;"></div></div>
-            <div style="font-size:0.72rem;color:var(--text-light);margin-top:4px;">9% de tu ingreso (recomendado: 5%)</div>
-          </div>
-        </div>
-        <div style="margin-top:12px;padding:12px;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;font-size:0.78rem;color:#991b1b;">⚠ Atención: Tienes 2 categorías por sobre lo recomendado. Revisa tus gastos en las áreas marcadas en rojo.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PATRIMONIO SHOWCASE -->
-  <section class="patrimonio-section" style="background:var(--bg-subtle);padding:100px 24px;">
-    <div style="max-width:1120px;margin:0 auto;">
-      <div class="fade-up" style="text-align:center;">
-        <div class="section-label">Patrimonio y proyecciones</div>
-        <div class="section-title">Mira el panorama completo</div>
-        <div class="section-subtitle" style="margin:12px auto 0;">Registra propiedades, deudas e inversiones. Ve tu patrimonio neto, perfil financiero y una proyección real hasta tu jubilación.</div>
-      </div>
-      <!-- Patrimonio mock -->
-      <div class="fade-up patrimonio-grid-resp" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;">
-        <!-- Resumen patrimonio -->
-        <div class="mock-kpi" style="padding:28px;">
-          <div style="font-size:1rem;font-weight:700;margin-bottom:20px;">💰 Resumen Patrimonio</div>
-          <div style="text-align:center;margin-bottom:20px;">
-            <div style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#4f46e5;">Patrimonio Neto</div>
-            <div class="pat-neto-value" style="font-size:2rem;font-weight:800;color:#4f46e5;">$68.200.000</div>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
-            <div>
-              <div style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-light);">Propiedades</div>
-              <div style="font-size:1.1rem;font-weight:700;">$58.200.000</div>
-              <div style="font-size:0.72rem;color:var(--text-light);">UF 1.500 (neto deuda)</div>
-            </div>
-            <div>
-              <div style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-light);">Ahorro Acumulado</div>
-              <div style="font-size:1.1rem;font-weight:700;">$10.000.000</div>
-            </div>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
-            <div>
-              <div style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-light);">Número FIRE</div>
-              <div style="font-size:1.1rem;font-weight:700;">$600.000.000</div>
-            </div>
-            <div>
-              <div style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-light);">Progreso FIRE</div>
-              <div style="font-size:1.1rem;font-weight:700;">11.4%</div>
-            </div>
-          </div>
-          <div style="background:#f1f5f9;border-radius:8px;height:10px;overflow:hidden;">
-            <div style="width:11.4%;height:100%;background:linear-gradient(90deg,#4f46e5,#06b6d4);border-radius:8px;"></div>
-          </div>
-          <div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--text-light);margin-top:4px;">
-            <span>Hoy</span><span>~38 años</span><span>FIRE</span>
-          </div>
-        </div>
-      </div>
-      <!-- Propiedades -->
-      <div class="fade-up" style="margin-top:24px;">
-        <div class="mock-kpi" style="padding:28px;">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
-            <div style="font-size:1rem;font-weight:700;">🏠 Propiedades e Inversiones</div>
-          </div>
-          <div class="properties-grid-resp" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-            <div style="background:var(--bg-subtle);border-radius:12px;padding:20px;border:1px solid var(--border);">
-              <div style="font-size:0.92rem;font-weight:700;">Depto Santiago Centro</div>
-              <div style="font-size:0.78rem;color:var(--text-light);margin:4px 0 12px;">Propiedad</div>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-                <div><div style="font-size:0.68rem;color:var(--text-light);text-transform:uppercase;">Valor actual</div><div style="font-size:0.92rem;font-weight:600;">UF 3.800</div></div>
-                <div><div style="font-size:0.68rem;color:var(--text-light);text-transform:uppercase;">Deuda</div><div style="font-size:0.92rem;font-weight:600;color:#dc2626;">UF 2.600</div></div>
-                <div><div style="font-size:0.68rem;color:var(--text-light);text-transform:uppercase;">Dividendo</div><div style="font-size:0.92rem;font-weight:600;">$420.000</div></div>
-                <div><div style="font-size:0.68rem;color:var(--text-light);text-transform:uppercase;">Plazo restante</div><div style="font-size:0.92rem;font-weight:600;">22 años</div></div>
-              </div>
-            </div>
-            <div style="background:var(--bg-subtle);border-radius:12px;padding:20px;border:1px solid var(--border);">
-              <div style="font-size:0.92rem;font-weight:700;">Depto Inversion Ñuñoa</div>
-              <div style="font-size:0.78rem;color:var(--text-light);margin:4px 0 12px;">Propiedad</div>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-                <div><div style="font-size:0.68rem;color:var(--text-light);text-transform:uppercase;">Valor actual</div><div style="font-size:0.92rem;font-weight:600;">UF 2.200</div></div>
-                <div><div style="font-size:0.68rem;color:var(--text-light);text-transform:uppercase;">Deuda</div><div style="font-size:0.92rem;font-weight:600;color:#dc2626;">UF 1.900</div></div>
-                <div><div style="font-size:0.68rem;color:var(--text-light);text-transform:uppercase;">Arriendo</div><div style="font-size:0.92rem;font-weight:600;color:#059669;">$380.000</div></div>
-                <div><div style="font-size:0.68rem;color:var(--text-light);text-transform:uppercase;">Plazo restante</div><div style="font-size:0.92rem;font-weight:600;">28 años</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Proyeccion -->
-      <div class="fade-up" style="margin-top:24px;">
-        <div class="mock-kpi" style="padding:28px;">
-          <div style="font-size:1rem;font-weight:700;margin-bottom:4px;">📈 Proyección hacia Jubilación</div>
-          <div style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:20px;">Crecimiento estimado de tu patrimonio considerando ahorro mensual, rentabilidad y plusvalia de propiedades.</div>
-          <!-- Simplified chart with SVG -->
-          <svg viewBox="0 0 800 250" style="width:100%;height:auto;">
-            <!-- Grid lines -->
-            <line x1="40" y1="20" x2="40" y2="210" stroke="#e2e8f0" stroke-width="1"/>
-            <line x1="40" y1="210" x2="780" y2="210" stroke="#e2e8f0" stroke-width="1"/>
-            <line x1="40" y1="170" x2="780" y2="170" stroke="#f1f5f9" stroke-width="1"/>
-            <line x1="40" y1="130" x2="780" y2="130" stroke="#f1f5f9" stroke-width="1"/>
-            <line x1="40" y1="90" x2="780" y2="90" stroke="#f1f5f9" stroke-width="1"/>
-            <line x1="40" y1="50" x2="780" y2="50" stroke="#f1f5f9" stroke-width="1"/>
-            <!-- Y labels -->
-            <text x="35" y="214" text-anchor="end" font-size="9" fill="#94a3b8">$0M</text>
-            <text x="35" y="174" text-anchor="end" font-size="9" fill="#94a3b8">$200M</text>
-            <text x="35" y="134" text-anchor="end" font-size="9" fill="#94a3b8">$400M</text>
-            <text x="35" y="94" text-anchor="end" font-size="9" fill="#94a3b8">$600M</text>
-            <text x="35" y="54" text-anchor="end" font-size="9" fill="#94a3b8">$800M</text>
-            <!-- FIRE line -->
-            <line x1="40" y1="90" x2="780" y2="90" stroke="#10b981" stroke-width="2" stroke-dasharray="8 4"/>
-            <text x="785" y="87" font-size="8" fill="#10b981" text-anchor="start">FIRE</text>
-            <!-- Debt line (red, decreasing) -->
-            <polyline points="40,165 140,158 240,150 340,140 440,125 540,100 600,80 640,55 680,30" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 3"/>
-            <!-- Patrimonio area -->
-            <path d="M40,200 L140,195 L240,188 L340,178 L440,160 L540,130 L640,90 L740,40 L780,20 L780,210 L40,210 Z" fill="rgba(79,70,229,0.08)"/>
-            <!-- Patrimonio line -->
-            <polyline points="40,200 140,195 240,188 340,178 440,160 540,130 640,90 740,40 780,20" fill="none" stroke="#4f46e5" stroke-width="2.5"/>
-            <!-- Dots -->
-            <circle cx="40" cy="200" r="3" fill="#4f46e5"/>
-            <circle cx="240" cy="188" r="3" fill="#4f46e5"/>
-            <circle cx="440" cy="160" r="3" fill="#4f46e5"/>
-            <circle cx="640" cy="90" r="3" fill="#4f46e5"/>
-            <circle cx="780" cy="20" r="3" fill="#4f46e5"/>
-            <!-- X labels -->
-            <text x="40" y="230" text-anchor="middle" font-size="9" fill="#94a3b8">32</text>
-            <text x="140" y="230" text-anchor="middle" font-size="9" fill="#94a3b8">37</text>
-            <text x="240" y="230" text-anchor="middle" font-size="9" fill="#94a3b8">42</text>
-            <text x="340" y="230" text-anchor="middle" font-size="9" fill="#94a3b8">47</text>
-            <text x="440" y="230" text-anchor="middle" font-size="9" fill="#94a3b8">52</text>
-            <text x="540" y="230" text-anchor="middle" font-size="9" fill="#94a3b8">57</text>
-            <text x="640" y="230" text-anchor="middle" font-size="9" fill="#94a3b8">62</text>
-            <text x="740" y="230" text-anchor="middle" font-size="9" fill="#94a3b8">67</text>
-            <text x="780" y="230" text-anchor="middle" font-size="9" fill="#94a3b8">70</text>
-            <text x="410" y="248" text-anchor="middle" font-size="10" fill="#94a3b8">Edad</text>
-            <!-- Legend -->
-            <rect x="200" y="3" width="12" height="3" fill="#4f46e5" rx="1"/>
-            <text x="216" y="8" font-size="8" fill="#64748b">Patrimonio Neto</text>
-            <rect x="330" y="3" width="12" height="3" fill="#ef4444" rx="1" stroke-dasharray="3 2"/>
-            <text x="346" y="8" font-size="8" fill="#64748b">Deuda Hipotecaria</text>
-            <rect x="460" y="3" width="12" height="3" fill="#10b981" rx="1"/>
-            <text x="476" y="8" font-size="8" fill="#64748b">Número FIRE</text>
-          </svg>
-          <!-- KPIs bottom -->
-          <div class="projection-kpis-resp" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px;">
-            <div class="mock-kpi" style="text-align:center;padding:14px;">
-              <div style="font-size:0.68rem;font-weight:600;text-transform:uppercase;color:var(--text-light);">Patrimonio a los 70</div>
-              <div style="font-size:1.1rem;font-weight:800;">$842.000.000</div>
-            </div>
-            <div class="mock-kpi" style="text-align:center;padding:14px;">
-              <div style="font-size:0.68rem;font-weight:600;text-transform:uppercase;color:var(--text-light);">Renta Mensual Pasiva (4%)</div>
-              <div style="font-size:1.1rem;font-weight:800;">$2.807.000</div>
-              <div style="font-size:0.7rem;color:var(--accent);">Cubre tu meta de $2.000.000</div>
-            </div>
-            <div class="mock-kpi" style="text-align:center;padding:14px;">
-              <div style="font-size:0.68rem;font-weight:600;text-transform:uppercase;color:var(--text-light);">Edad FIRE Estimada</div>
-              <div style="font-size:1.1rem;font-weight:800;">62 años</div>
-              <div style="font-size:0.7rem;color:var(--text-light);">Faltan 30 años</div>
-            </div>
-            <div class="mock-kpi" style="text-align:center;padding:14px;">
-              <div style="font-size:0.68rem;font-weight:600;text-transform:uppercase;color:var(--text-light);">Propiedades a los 70 (neto)</div>
-              <div style="font-size:1.1rem;font-weight:800;">UF 8.400</div>
-              <div style="font-size:0.7rem;color:var(--text-light);">$326.000.000 · sin deuda</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- PRICING -->
   <section class="pricing-section" id="pricing">
@@ -1819,17 +1596,6 @@
           </div>
         </div>
       </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="testimonial-text">"Me encanta que no me pide conectar mi banco. Subo la cartola yo y listo. Simple y seguro."</div>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">PV</div>
-          <div>
-            <div class="testimonial-name">Paulina V.</div>
-            <div class="testimonial-role">Emprendedora</div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1877,48 +1643,10 @@
             <div class="faq-answer-inner">Sí, sin vueltas. Cancelas y tu plan vuelve al gratuito al final del período. Tus datos se mantienen, no se borran.</div>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Funciona en mi país?
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Sí. GuitaControl funciona en toda Latinoamérica. Solo necesitas descargar la cartola de tu banco o tarjeta de crédito en Excel o PDF. Las categorías y reglas son 100% editables para que las adaptes a tus gastos, sin importar el país. Pagos con Mercado Pago en moneda local.</div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- EMOTIONAL SECTION -->
-  <section style="padding:80px 24px;background:#fff;">
-    <div class="fade-up" style="max-width:720px;margin:0 auto;text-align:center;">
-      <div style="font-size:2.2rem;margin-bottom:8px;">💡</div>
-      <h2 style="font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;letter-spacing:-0.03em;line-height:1.2;color:var(--text);">
-        No se trata de ganar más. <br>Se trata de <em style="font-style:normal;color:var(--accent);">saber dónde va tu plata.</em>
-      </h2>
-      <p style="font-size:1.05rem;color:var(--text-secondary);margin-top:20px;line-height:1.7;max-width:600px;margin-left:auto;margin-right:auto;">
-        Cuando por fin ves tus números claros, todo cambia. Dejas de improvisar. Empiezas a ordenarte, a gastar con intención, y eventualmente — a invertir de forma inteligente lo que antes se perdía sin que te dieras cuenta.
-      </p>
-      <div style="display:flex;justify-content:center;gap:32px;margin-top:36px;flex-wrap:wrap;">
-        <div style="text-align:center;">
-          <div style="font-size:1.8rem;font-weight:800;color:var(--text);">1.</div>
-          <div style="font-size:0.88rem;color:var(--text-secondary);font-weight:500;max-width:140px;">Ves en qué gastas de verdad</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-size:1.8rem;font-weight:800;color:var(--text);">2.</div>
-          <div style="font-size:0.88rem;color:var(--text-secondary);font-weight:500;max-width:140px;">Reduces lo que no necesitas</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-size:1.8rem;font-weight:800;color:var(--text);">3.</div>
-          <div style="font-size:0.88rem;color:var(--text-secondary);font-weight:500;max-width:140px;">Inviertes lo que sobra con cabeza</div>
-        </div>
-      </div>
-      <p style="font-size:0.92rem;color:var(--text-light);margin-top:32px;font-style:italic;">
-        "La libertad financiera no empieza con un gran sueldo. Empieza con un poco de orden."
-      </p>
-    </div>
-  </section>
 
   <!-- FINAL CTA -->
   <section class="final-cta" id="cta">
