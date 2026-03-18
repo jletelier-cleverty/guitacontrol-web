@@ -274,6 +274,84 @@
     }
     .demo-cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
 
+    /* ---- EXCEL ANIMATION ---- */
+    .excel-transform {
+      max-width: 900px; margin: 0 auto 60px; padding: 0 24px;
+      position: relative;
+    }
+    .excel-transform-inner {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+    /* Excel mess state */
+    .excel-mess {
+      background: #fff;
+      padding: 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.7rem;
+      position: relative;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .excel-mess.hidden { opacity: 0; transform: scale(0.95); position: absolute; inset: 0; pointer-events: none; }
+    .excel-topbar {
+      background: #217346; color: #fff; padding: 8px 16px;
+      font-family: var(--font); font-size: 0.8rem; font-weight: 600;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .excel-topbar span { opacity: 0.7; font-weight: 400; font-size: 0.7rem; }
+    .excel-grid {
+      display: grid;
+      grid-template-columns: 32px repeat(6, 1fr);
+      border-collapse: collapse;
+    }
+    .excel-grid .eh {
+      background: #e8e8e8; border: 1px solid #ccc; padding: 4px 6px;
+      text-align: center; font-weight: 600; color: #555; font-size: 0.65rem;
+    }
+    .excel-grid .ec {
+      border: 1px solid #ddd; padding: 4px 6px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      font-size: 0.65rem; color: #333;
+    }
+    .ec.num { text-align: right; }
+    .ec.red { color: #dc2626; }
+    .ec.green { color: #059669; }
+    .ec.yellow { background: #fef9c3; }
+    .ec.highlight { background: #fee2e2; }
+    .ec.dup { background: #fef3c7; color: #92400e; font-style: italic; }
+    .excel-label {
+      text-align: center; padding: 20px;
+      font-family: var(--font); font-size: 0.95rem; font-weight: 600;
+      color: var(--text-secondary); background: #f9fafb;
+      border-top: 1px solid #e5e7eb;
+    }
+    .excel-label em { color: #dc2626; font-style: normal; }
+
+    /* Dashboard clean state */
+    .dash-clean {
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .dash-clean.hidden { opacity: 0; transform: scale(0.95); position: absolute; inset: 0; pointer-events: none; }
+
+    /* Toggle button */
+    .transform-toggle {
+      display: flex; justify-content: center; gap: 0;
+      margin-top: 20px;
+    }
+    .transform-toggle button {
+      font-family: var(--font); font-size: 0.82rem; font-weight: 600;
+      padding: 10px 24px; border: 1.5px solid var(--border);
+      background: #fff; color: var(--text-secondary);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .transform-toggle button:first-child { border-radius: 10px 0 0 10px; }
+    .transform-toggle button:last-child { border-radius: 0 10px 10px 0; border-left: 0; }
+    .transform-toggle button.active {
+      background: var(--text); color: #fff; border-color: var(--text);
+    }
+
     /* ---- HERO VISUAL ---- */
     .hero-visual {
       max-width: 1040px; margin: 60px auto 0;
@@ -1041,8 +1119,105 @@
     <p class="hero-price">Listo en 2 minutos. Sin tarjeta. <strong>Gratis durante el beta</strong> — todo desbloqueado.</p>
   </section>
 
-  <!-- HERO VISUAL -->
-  <div class="hero-visual fade-up">
+  <!-- EXCEL vs GUITACONTROL -->
+  <div class="excel-transform fade-up">
+    <div class="transform-toggle">
+      <button id="btnExcel" class="active" onclick="showExcel()">Antes: tu Excel</button>
+      <button id="btnGuita" onclick="showGuita()">Despues: GuitaControl</button>
+    </div>
+    <div class="excel-transform-inner" style="margin-top:16px;">
+      <!-- EXCEL MESS -->
+      <div class="excel-mess" id="excelState">
+        <div class="excel-topbar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M3 3h18v18H3V3zm2 4v12h14V7H5zm2 2h3v2H7V9zm4 0h3v2h-3V9zm4 0h3v2h-3V9zm-8 3h3v2H7v-2zm4 0h3v2h-3v-2zm4 0h3v2h-3v-2z"/></svg>
+          finanzas_casa_FINAL_v3_copia(2).xlsx <span>— Editado por ultima vez hace 47 dias</span>
+        </div>
+        <div class="excel-grid">
+          <div class="eh"></div><div class="eh">A</div><div class="eh">B</div><div class="eh">C</div><div class="eh">D</div><div class="eh">E</div><div class="eh">F</div>
+          <div class="eh">1</div><div class="ec" style="font-weight:700;">Fecha</div><div class="ec" style="font-weight:700;">Descripcion</div><div class="ec" style="font-weight:700;">Monto</div><div class="ec" style="font-weight:700;">Banco</div><div class="ec" style="font-weight:700;">Tipo</div><div class="ec yellow" style="font-weight:700;">Categoria??</div>
+          <div class="eh">2</div><div class="ec">15/01</div><div class="ec">PAG AUTOM ENEL</div><div class="ec num red">-$82.340</div><div class="ec">Bco Chile</div><div class="ec">Cta Cte</div><div class="ec yellow">Luz? Servicios?</div>
+          <div class="eh">3</div><div class="ec">15/01</div><div class="ec">COMPRA TJC *LIDER</div><div class="ec num red">-$127.890</div><div class="ec">CMR</div><div class="ec">Credito</div><div class="ec"></div>
+          <div class="eh">4</div><div class="ec">16/01</div><div class="ec">TEF RECIBIDA</div><div class="ec num green">+$3.500.000</div><div class="ec">Santander</div><div class="ec">Cta Cte</div><div class="ec yellow">Sueldo Jose</div>
+          <div class="eh">5</div><div class="ec highlight">16/01</div><div class="ec highlight">COMPRA TJC *LIDER</div><div class="ec num highlight red">-$127.890</div><div class="ec highlight">CMR</div><div class="ec highlight">Credito</div><div class="ec highlight dup">DUPLICADO??</div>
+          <div class="eh">6</div><div class="ec">17/01</div><div class="ec">PAG AUTOM MOVISTAR</div><div class="ec num red">-$28.990</div><div class="ec">Bco Chile</div><div class="ec">Cta Cte</div><div class="ec"></div>
+          <div class="eh">7</div><div class="ec">18/01</div><div class="ec">COMPRA DBTO POS</div><div class="ec num red">-$45.600</div><div class="ec">Santander</div><div class="ec">Debito</div><div class="ec yellow">que era esto?</div>
+          <div class="eh">8</div><div class="ec">19/01</div><div class="ec">RIPLEY CUOTA 3/12</div><div class="ec num red">-$34.990</div><div class="ec">Ripley</div><div class="ec">Credito</div><div class="ec"></div>
+          <div class="eh">9</div><div class="ec">20/01</div><div class="ec">UBER *TRIP</div><div class="ec num red">-$8.740</div><div class="ec">CMR</div><div class="ec">Credito</div><div class="ec yellow">transporte</div>
+          <div class="eh">10</div><div class="ec">20/01</div><div class="ec">ABONO CTA AHORRO</div><div class="ec num red">-$500.000</div><div class="ec">Bco Chile</div><div class="ec">Ahorro</div><div class="ec yellow">ahorro o gasto??</div>
+        </div>
+        <div class="excel-label">Asi se ven tus finanzas hoy: <em>un enredo</em></div>
+      </div>
+
+      <!-- GUITACONTROL CLEAN -->
+      <div class="dash-clean hidden" id="guitaState">
+        <div class="browser-bar" style="background:#f1f5f9;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;padding:12px 16px;">
+          <div class="browser-dot" style="width:10px;height:10px;border-radius:50%;background:#fca5a5;"></div>
+          <div class="browser-dot" style="width:10px;height:10px;border-radius:50%;background:#fde68a;"></div>
+          <div class="browser-dot" style="width:10px;height:10px;border-radius:50%;background:#86efac;"></div>
+          <div style="flex:1;background:#fff;border-radius:6px;padding:5px 12px;font-size:0.75rem;color:var(--text-light);margin-left:8px;">app.guitacontrol.com</div>
+        </div>
+        <div style="padding:24px;background:var(--bg-subtle);">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;">
+            <div style="background:#fff;border-radius:12px;padding:16px;border:1px solid var(--border);border-left:3px solid #059669;">
+              <div style="font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-light);">Ingresos</div>
+              <div style="font-size:1.3rem;font-weight:700;color:#059669;margin-top:2px;">$3.500.000</div>
+            </div>
+            <div style="background:#fff;border-radius:12px;padding:16px;border:1px solid var(--border);border-left:3px solid #dc2626;">
+              <div style="font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-light);">Gastos</div>
+              <div style="font-size:1.3rem;font-weight:700;color:#dc2626;margin-top:2px;">$856.440</div>
+            </div>
+            <div style="background:#fff;border-radius:12px;padding:16px;border:1px solid var(--border);border-left:3px solid #3b82f6;">
+              <div style="font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-light);">Balance</div>
+              <div style="font-size:1.3rem;font-weight:700;color:#059669;margin-top:2px;">+$2.643.560</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:12px;">
+            <div style="background:#fff;border-radius:12px;padding:16px;border:1px solid var(--border);">
+              <div style="font-size:0.75rem;font-weight:600;color:var(--text-secondary);margin-bottom:10px;">Por categoria</div>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;color:var(--text-secondary);display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:2px;background:#4f46e5;display:inline-block;"></span>Supermercado</span><span style="font-size:0.72rem;font-weight:600;">$127.890</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;color:var(--text-secondary);display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:2px;background:#10b981;display:inline-block;"></span>Servicios</span><span style="font-size:0.72rem;font-weight:600;">$111.330</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;color:var(--text-secondary);display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:2px;background:#f59e0b;display:inline-block;"></span>Compras</span><span style="font-size:0.72rem;font-weight:600;">$80.590</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;color:var(--text-secondary);display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:2px;background:#ec4899;display:inline-block;"></span>Cuotas</span><span style="font-size:0.72rem;font-weight:600;">$34.990</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;color:var(--text-secondary);display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:2px;background:#6366f1;display:inline-block;"></span>Transporte</span><span style="font-size:0.72rem;font-weight:600;">$8.740</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;color:var(--text-secondary);display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:2px;background:#06b6d4;display:inline-block;"></span>Ahorro</span><span style="font-size:0.72rem;font-weight:600;">$500.000</span></div>
+              </div>
+            </div>
+            <div style="background:#fff;border-radius:12px;padding:16px;border:1px solid var(--border);">
+              <div style="font-size:0.75rem;font-weight:600;color:var(--text-secondary);margin-bottom:10px;">Unificado: 4 fuentes</div>
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <div style="display:flex;align-items:center;gap:8px;padding:6px 8px;background:var(--bg-subtle);border-radius:6px;">
+                  <span style="width:6px;height:6px;border-radius:50%;background:#0032a0;"></span>
+                  <span style="font-size:0.72rem;flex:1;">Banco de Chile</span>
+                  <span style="font-size:0.68rem;color:var(--text-light);">3 mov.</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;padding:6px 8px;background:var(--bg-subtle);border-radius:6px;">
+                  <span style="width:6px;height:6px;border-radius:50%;background:#ec0000;"></span>
+                  <span style="font-size:0.72rem;flex:1;">Santander</span>
+                  <span style="font-size:0.68rem;color:var(--text-light);">2 mov.</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;padding:6px 8px;background:var(--bg-subtle);border-radius:6px;">
+                  <span style="width:6px;height:6px;border-radius:50%;background:#c8102e;"></span>
+                  <span style="font-size:0.72rem;flex:1;">CMR Falabella</span>
+                  <span style="font-size:0.68rem;color:var(--text-light);">2 mov.</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;padding:6px 8px;background:var(--bg-subtle);border-radius:6px;">
+                  <span style="width:6px;height:6px;border-radius:50%;background:#6d28d9;"></span>
+                  <span style="font-size:0.72rem;flex:1;">Ripley</span>
+                  <span style="font-size:0.68rem;color:var(--text-light);">1 mov.</span>
+                </div>
+              </div>
+              <div style="margin-top:8px;padding:6px 10px;background:#ecfdf5;border-radius:6px;font-size:0.68rem;color:#059669;font-weight:600;text-align:center;">1 duplicado detectado y eliminado</div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;padding:16px;background:var(--bg-subtle);border-top:1px solid #e5e7eb;font-family:var(--font);font-size:0.9rem;font-weight:600;color:var(--accent);">Todo unificado, categorizado y sin duplicados</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO VISUAL (original mock dashboard hidden) -->
+  <div class="hero-visual fade-up" style="display:none;">
     <div class="hero-screenshot">
       <div class="browser-bar">
         <div class="browser-dot"></div>
@@ -1527,6 +1702,20 @@
     window.addEventListener('scroll', () => {
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
     });
+
+    // Excel vs GuitaControl toggle
+    function showExcel() {
+      document.getElementById('excelState').classList.remove('hidden');
+      document.getElementById('guitaState').classList.add('hidden');
+      document.getElementById('btnExcel').classList.add('active');
+      document.getElementById('btnGuita').classList.remove('active');
+    }
+    function showGuita() {
+      document.getElementById('excelState').classList.add('hidden');
+      document.getElementById('guitaState').classList.remove('hidden');
+      document.getElementById('btnExcel').classList.remove('active');
+      document.getElementById('btnGuita').classList.add('active');
+    }
 
     // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(btn => {
